@@ -1,0 +1,13 @@
+# vim: set syn=sh
+function ptpb() {
+	require curl || return 1
+	if [ -t 0 ] && [ -f "$1" ]; then
+		curl -F c=@"$1" https://ptpb.pw
+	elif ! [ -t 0 ]; then
+		curl -F c=@- https://ptpb.pw
+	else
+		echo "Usage: ptpb file"
+		echo "Usage: <command> 2>&1 | ptpb"
+		return 1
+	fi
+}

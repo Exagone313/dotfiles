@@ -1,0 +1,19 @@
+# vim: set syn=sh
+if [ -z "$1" ]; then
+	echo "Usage: $0 file.(cbr|rar)"
+	exit 1
+fi
+require basename dirname mktemp find 7z || exit 1
+CBZ="$(basename "$1")"
+CBZ="${CBZ%.*}.cbz"
+DN="$(dirname "$1")"
+if [ -f "$DN/$CBZ" ]; then
+	echo "$DN/$CBZ already exists"
+	exit 1
+else
+	echo "Will create $DN/$CBZ"
+	DIR="$(mktemp -d -p "$TMP")"
+	7z x "$1" -o"$DIR"
+	find "$DIR" -type f -print -exec 7z a -tzip "$DN/$CBZ" {} \;
+	rm -rf "$DIR"
+fi

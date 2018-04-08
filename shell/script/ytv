@@ -1,0 +1,14 @@
+# vim: set syn=sh
+if [ -z "$1" ]; then
+	echo "Usage: $0 link"
+	exit 1
+fi
+require youtube-dl || exit 1
+if [ -n "$YTDIR" ]; then
+	echo "Output directory: ${YTDIR}"
+	previous="$(pwd)"
+fi
+youtube-dl -k --no-playlist -o '%(title)s-%(id)s.%(ext)s' -c --no-part --no-mtime -f best "$1"
+if [ -n "$YTDIR" ]; then
+	cd "${previous}"
+fi

@@ -1,0 +1,7 @@
+# vim: set syn=sh
+if [ -z "${ETHOME}" ]; then
+	echo '$ETHOME is not set.'
+	exit 1
+fi
+require find 7z grep sed sort uniq || exit 1
+find "${ETHOME}/etmain" -name '*.pk3' -exec 7z l {} \; | grep bsp | sed 's/^.*maps.//' | sed 's/\.bsp$//' | sort | uniq

@@ -1,0 +1,14 @@
+# vim: set syn=sh
+if [ -n "${XDG_RUNTIME_DIR}" ]; then
+	export TEMP="${XDG_RUNTIME_DIR}"
+	export TMP="${XDG_RUNTIME_DIR}"
+elif [ -d "/tmp" ]; then
+	random_name="/tmp/${USER}-${RANDOM}${RANDOM}${RANDOM}"
+	if [ -x "$(command -v date)" ]; then
+		random_name="${random_name}$(date +'%Y%m%d%H%M%S%s')"
+	fi
+	mkdir -m 700 -p "${random_name}"
+	export TMP="${random_name}"
+	export TEMP="${random_name}"
+	unset random_name
+fi

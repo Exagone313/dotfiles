@@ -1,0 +1,12 @@
+# vim: set syn=sh
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+alias l='ls -ahl'
+alias la='ls -Ahl'
+alias ll='ls -hl'
+alias sl=ls
+
+alias md='mkdir -p'
+alias rd=rmdir

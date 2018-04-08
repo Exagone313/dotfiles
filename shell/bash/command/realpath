@@ -1,0 +1,20 @@
+# vim: set syn=sh
+if ! [ -x "$(command -v realpath)" ]; then
+	if [ -x "$(command -v grealpath)" ]; then
+		alias realpath=grealpath
+	elif [ -x "$(command -v python3)" ]; then
+		function realpath() {
+			python3 -c "import os;print(os.path.realpath('"$1"'))"
+		}
+	elif [ -x "$(command -v python)" ] && python -c "import os;os.path.realpath" >/dev/null 2>&1; then # requires python >= 2.2
+		function realpath() {
+			python -c "import os;print(os.path.realpath('"$1"'))"
+		}
+	else
+		echo "Warning: realpath won't resolve symbolic links!"
+		function realpath() {
+			bash -c "cd '$1';pwd"
+		}
+		FAKE_REALPATH=1
+	fi
+fi

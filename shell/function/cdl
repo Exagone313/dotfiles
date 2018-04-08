@@ -1,0 +1,4 @@
+# vim: set syn=sh
+function cdl() {
+	cd "$1" && ls
+}
