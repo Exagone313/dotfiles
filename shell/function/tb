@@ -1,4 +1,4 @@
-#vim: set syn=sh
+# vim:syn=sh
 function tb() {
 	require nc || return 1
 	nc termbin.com 9999

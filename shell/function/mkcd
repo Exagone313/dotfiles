@@ -1,4 +1,4 @@
-# vim: set syn=sh
+# vim:syn=sh
 function mkcd() {
 	mkdir "$1" && cd "$1"
 }

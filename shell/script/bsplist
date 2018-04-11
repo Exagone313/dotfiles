@@ -1,4 +1,4 @@
-# vim: set syn=sh
+# vim:syn=sh
 if [ -z "${ETHOME}" ]; then
 	echo '$ETHOME is not set.'
 	exit 1

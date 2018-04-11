@@ -1,2 +1,2 @@
-# vim: set syn=sh
+# vim:syn=sh
 export PATH="${DOTFILES}/shell/script:${PATH}"
