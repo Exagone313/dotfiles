@@ -1,5 +1,0 @@
-# vim:ft=sh
-function pswine() {
-	require ps wine egrep || return 1
-	ps -A -u "${USER}" -o pid,comm | egrep '\\.exe$'
-}

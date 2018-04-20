@@ -1,0 +1,3 @@
+# vim:ft=sh
+require ps wine egrep || exit 1
+ps -A -u "${USER}" -o pid,comm | egrep '\\.exe$'
