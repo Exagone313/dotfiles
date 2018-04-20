@@ -1,6 +1,6 @@
-# vim:syn=sh
+# vim:ft=sh
 if [ -z "$1" ]; then
-	echo "Usage: $0 link [audio_format]"
+	echo "Usage: ytm link [audio_format]"
 	exit 1
 fi
 require youtube-dl ffmpeg || exit 1

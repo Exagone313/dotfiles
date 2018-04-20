@@ -1,4 +1,4 @@
-directory_names=(env function)
+directory_names=('env' 'function' 'alias')
 for directory_name in ${directory_names[@]}; do
 	for file in "${DOTFILES}"/shell/${directory_name}/*; do
 		if [ -f "${file}" ]; then

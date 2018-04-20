@@ -1,4 +1,4 @@
-# vim:syn=sh
+# vim:ft=sh
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'

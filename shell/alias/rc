@@ -1,0 +1,11 @@
+# vim:ft=sh
+alias bashrc="${EDITOR} '${HOME}/.bashrc'"
+alias zshrc="${EDITOR} '${HOME}/.zshrc'"
+
+if [ -x "$(command -v i3)" ]; then
+	alias i3rc="${EDITOR} '${HOME}/.config/i3/config'"
+	alias i3statusrc="${EDITOR} '${HOME}/.config/i3status/config'"
+fi
+if [ -x "$(command -v compton)" ]; then
+	alias comptonrc="${EDITOR} '${HOME}/.config/compton.conf'"
+fi

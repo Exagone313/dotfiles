@@ -1,4 +1,4 @@
-# vim:syn=sh
+# vim:ft=sh
 ret=0
 for prog in "$@"; do
 	if ! [ -x "$(command -v ${prog})" ]; then

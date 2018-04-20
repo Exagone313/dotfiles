@@ -1,0 +1,12 @@
+# vim:ft=sh
+if [ -x "$(command -v nvim)" ]; then
+	export EDITOR="$(command -v nvim)"
+elif [ -x "$(command -v vim)" ]; then
+	export EDITOR="$(command -v vim)"
+elif [ -x "$(command -v vi)" ]; then
+	export EDITOR="$(command -v vi)"
+elif [ -x "$(command -v editor)" ]; then
+	export EDITOR="$(command -v editor)"
+elif [ -x "$(command -v nano)" ]; then
+	export EDITOR="$(command -v nano)"
+fi

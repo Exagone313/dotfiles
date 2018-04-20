@@ -1,4 +1,4 @@
-# vim:syn=sh
+# vim:ft=sh
 if ! [ -x "$(command -v realpath)" ]; then
 	if [ -x "$(command -v grealpath)" ]; then
 		alias realpath=grealpath

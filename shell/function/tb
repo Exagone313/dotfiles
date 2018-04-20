@@ -1,5 +1,10 @@
-# vim:syn=sh
+# vim:ft=sh
 function tb() {
 	require nc || return 1
-	nc termbin.com 9999
+	if ! [ -t 0 ]; then
+		nc termbin.com 9999
+	else
+		echo "Usage: <command> 2>&1 | tb"
+		return 1
+	fi
 }

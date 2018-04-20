@@ -1,4 +1,4 @@
-# vim:syn=sh
+# vim:ft=sh
 if [ -z "${TMP}" ]; then
 	if [ -n "${XDG_RUNTIME_DIR}" ]; then
 		export TEMP="${XDG_RUNTIME_DIR}"

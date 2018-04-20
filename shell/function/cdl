@@ -1,4 +1,4 @@
-# vim:syn=sh
+# vim:ft=sh
 function cdl() {
 	cd "$1" && ls
 }

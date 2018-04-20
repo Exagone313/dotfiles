@@ -1,6 +1,6 @@
-# vim:syn=sh
+# vim:ft=sh
 if [ -z "$1" ]; then
-	echo "Usage: $0 file.(cbr|rar)"
+	echo "Usage: cbrcbz file.(cbr|rar)"
 	exit 1
 fi
 require basename dirname mktemp find 7z || exit 1

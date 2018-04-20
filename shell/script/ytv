@@ -1,6 +1,6 @@
-# vim:syn=sh
+# vim:ft=sh
 if [ -z "$1" ]; then
-	echo "Usage: $0 link"
+	echo "Usage: ytv link"
 	exit 1
 fi
 require youtube-dl || exit 1

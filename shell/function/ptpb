@@ -1,4 +1,4 @@
-# vim:syn=sh
+# vim:ft=sh
 function ptpb() {
 	require curl || return 1
 	if [ -t 0 ] && [ -f "$1" ]; then

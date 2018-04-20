@@ -1,0 +1,10 @@
+# vim:ft=sh
+if [ -x "$(command -v nvim)" ]; then
+	alias nvimrc="nvim '${HOME}/.config/nvim/init.vim'"
+fi
+if [ -x "$(command -v vim)" ]; then
+	alias vimrc="\vim '${HOME}/.vimrc'"
+fi
+
+alias vim="${EDITOR}"
+alias vi="${EDITOR}"
