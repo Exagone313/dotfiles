@@ -6,7 +6,7 @@ fi
 require youtube-dl ffmpeg || exit 1
 if [ -n "${YTDIR}" ]; then
 	echo "Output directory: ${YTDIR}"
-	previous="$(pwd)"
+	cd "${YTDIR}"
 fi
 if [ -n "$2" ]; then
 	aformat="$2"
@@ -14,6 +14,3 @@ else
 	aformat="vorbis"
 fi
 youtube-dl --no-playlist -o '%(title)s-%(id)s.%(ext)s' -c --no-part --no-mtime -f 18 -x --audio-format "${aformat}" --audio-quality 0 -k "$1"
-if [ -n "$YTDIR" ]; then
-	cd "${previous}"
-fi
