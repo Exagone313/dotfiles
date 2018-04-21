@@ -1,5 +1,0 @@
-# vim:ft=sh
-function setvolume() {
-	require pactl || return 1
-	pactl set-sink-volume @DEFAULT_SINK@ ${1}%
-}

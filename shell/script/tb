@@ -1,0 +1,8 @@
+# vim:ft=sh
+require nc || exit 1
+if ! [ -t 0 ]; then
+	nc termbin.com 9999
+else
+	echo "Usage: <command> 2>&1 | tb"
+	exit 1
+fi
