@@ -1,0 +1,23 @@
+# vim:ft=sh
+if ! [ -x "${SHELL}" ]; then
+	export SHELL="$(command -v "${SHELL}")"
+fi
+if ! [ -x "${SHELL}" ]; then
+	if [ -x "$(command -v zsh)" ]; then
+		export SHELL="$(command -v zsh)"
+	elif [ -x "$(command -v bash)" ]; then
+		export SHELL="$(command -v bash)"
+	else
+		export SHELL="$(command -v sh)"
+	fi
+	echo "Falling back to ${SHELL}"
+fi
+
+if [ -z "$1" ]; then
+	"$SHELL"
+elif [ -d "$1" ]; then
+	"$SHELL" -c "cd "$1";"${SHELL}""
+else
+	echo "$1 is not a directory"
+	exit 1
+fi
