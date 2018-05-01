@@ -1,6 +1,6 @@
 #!/bin/bash
 LOGGED="$(who | sed 's/^[a-zA-Z0-9]\+ \+//' | cut -d ' ' -f 1 | grep -v tty7)"
-if [ "$(echo -n "${LOGGED}" | wc -l)" -eq 0 ]; then
+if [ "$(echo -n "${LOGGED}" | grep -c '^')" -eq 0 ]; then
 	[ "$(echo -e "No\nYes" | dmenu -i -p "Really exit i3?")" = "Yes" ] && i3-msg exit
 else
 	echo "${LOGGED}" | dmenu -p "Logout from tty first"
