@@ -1,0 +1,2 @@
+# vim:ft=sh
+alias gdbr='gdb -ex=r --args'
