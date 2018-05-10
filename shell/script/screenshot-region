@@ -1,0 +1,7 @@
+# vim:ft=sh
+if [ -z "${SCREENSHOTDIR}" ]; then
+	echo '$SCREENSHOTDIR is not set.'
+	exit 1
+fi
+require maim || exit 1
+maim -t 0 -u --select --format=png --color=1,0.2,0.5,0.8 --bordersize=1 "${SCREENSHOTDIR}/$(date +"%y-%m-%d-%H-%M-%S-%N").png"

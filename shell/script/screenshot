@@ -1,0 +1,7 @@
+# vim:ft=sh
+if [ -z "${SCREENSHOTDIR}" ]; then
+	echo '$SCREENSHOTDIR is not set.'
+	exit 1
+fi
+require scrot || exit 1
+scrot -z "${SCREENSHOTDIR}/$(date +"%y-%m-%d-%H-%M-%S-%N").png"
