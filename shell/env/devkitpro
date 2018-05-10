@@ -1,0 +1,5 @@
+# vim:ft=sh
+if [ -d "/opt/devkitpro" ]; then
+	export DEVKITPRO="/opt/devkitpro"
+	export DEVKITARM="${DEVKITPRO}/devkitARM"
+fi
